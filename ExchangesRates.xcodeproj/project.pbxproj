@@ -3,27 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5EB07377333D38A2F15E88F6 /* Pods_ExchangesRates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B54C9778717E5FBC8F0C508 /* Pods_ExchangesRates.framework */; };
+		8326981C23C9D59D003D3078 /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8326981B23C9D59D003D3078 /* Rate.swift */; };
+		8326981E23C9DE21003D3078 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8326981D23C9DE21003D3078 /* UIView.swift */; };
+		8326982423CA6B5C003D3078 /* RateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8326982323CA6B5C003D3078 /* RateCell.swift */; };
+		8386041E23C9189F0067186E /* RatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8386041D23C9189F0067186E /* RatesService.swift */; };
 		8393840523C8D78900B2615B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8393840423C8D78900B2615B /* AppDelegate.swift */; };
 		8393840723C8D78A00B2615B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8393840623C8D78A00B2615B /* SceneDelegate.swift */; };
-		8393840923C8D78A00B2615B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8393840823C8D78A00B2615B /* ViewController.swift */; };
-		8393840C23C8D78A00B2615B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8393840A23C8D78A00B2615B /* Main.storyboard */; };
+		8393840923C8D78A00B2615B /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8393840823C8D78A00B2615B /* DashboardController.swift */; };
 		8393840E23C8D78B00B2615B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8393840D23C8D78B00B2615B /* Assets.xcassets */; };
-		8393841123C8D78B00B2615B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8393840F23C8D78B00B2615B /* LaunchScreen.storyboard */; };
+		8393842123C8D95B00B2615B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8393842023C8D95B00B2615B /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		596BDDA2D8C04F382D8B5E69 /* Pods-ExchangesRates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangesRates.debug.xcconfig"; path = "Target Support Files/Pods-ExchangesRates/Pods-ExchangesRates.debug.xcconfig"; sourceTree = "<group>"; };
+		7B54C9778717E5FBC8F0C508 /* Pods_ExchangesRates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExchangesRates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8326981B23C9D59D003D3078 /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
+		8326981D23C9DE21003D3078 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		8326982323CA6B5C003D3078 /* RateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
+		8386041D23C9189F0067186E /* RatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesService.swift; sourceTree = "<group>"; };
 		8393840123C8D78900B2615B /* ExchangesRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangesRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8393840423C8D78900B2615B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8393840623C8D78A00B2615B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8393840823C8D78A00B2615B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8393840B23C8D78A00B2615B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8393840823C8D78A00B2615B /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		8393840D23C8D78B00B2615B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8393841023C8D78B00B2615B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8393841223C8D78B00B2615B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8393842023C8D95B00B2615B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		A0EF4318D6B85FB6529C3A40 /* Pods-ExchangesRates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExchangesRates.release.xcconfig"; path = "Target Support Files/Pods-ExchangesRates/Pods-ExchangesRates.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EB07377333D38A2F15E88F6 /* Pods_ExchangesRates.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13218DD741DF799AA21D4FDE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B54C9778717E5FBC8F0C508 /* Pods_ExchangesRates.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		838603FB23C8DA190067186E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8326981D23C9DE21003D3078 /* UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		839383F823C8D78900B2615B = {
 			isa = PBXGroup;
 			children = (
+				8393842023C8D95B00B2615B /* Default-568h@2x.png */,
 				8393840323C8D78900B2615B /* ExchangesRates */,
 				8393840223C8D78900B2615B /* Products */,
+				E5A9A66CEACE069E39321277 /* Pods */,
+				13218DD741DF799AA21D4FDE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +86,90 @@
 		8393840323C8D78900B2615B /* ExchangesRates */ = {
 			isa = PBXGroup;
 			children = (
-				8393840423C8D78900B2615B /* AppDelegate.swift */,
-				8393840623C8D78A00B2615B /* SceneDelegate.swift */,
-				8393840823C8D78A00B2615B /* ViewController.swift */,
-				8393840A23C8D78A00B2615B /* Main.storyboard */,
-				8393840D23C8D78B00B2615B /* Assets.xcassets */,
-				8393840F23C8D78B00B2615B /* LaunchScreen.storyboard */,
-				8393841223C8D78B00B2615B /* Info.plist */,
+				8393841823C8D7AE00B2615B /* Application */,
+				8393841923C8D7BA00B2615B /* Dashboard */,
+				8393841E23C8D85000B2615B /* Shared */,
 			);
 			path = ExchangesRates;
+			sourceTree = "<group>";
+		};
+		8393841823C8D7AE00B2615B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8393840423C8D78900B2615B /* AppDelegate.swift */,
+				8393840623C8D78A00B2615B /* SceneDelegate.swift */,
+				8393841223C8D78B00B2615B /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8393841923C8D7BA00B2615B /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				8393841B23C8D80A00B2615B /* Models */,
+				8393841D23C8D83700B2615B /* Views */,
+				8393841C23C8D82400B2615B /* Controllers */,
+				8393841A23C8D7FC00B2615B /* Services */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		8393841A23C8D7FC00B2615B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8386041D23C9189F0067186E /* RatesService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8393841B23C8D80A00B2615B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8326981B23C9D59D003D3078 /* Rate.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8393841C23C8D82400B2615B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8393840823C8D78A00B2615B /* DashboardController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8393841D23C8D83700B2615B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8326982323CA6B5C003D3078 /* RateCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8393841E23C8D85000B2615B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				838603FB23C8DA190067186E /* Extensions */,
+				8393841F23C8D85900B2615B /* Assets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		8393841F23C8D85900B2615B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8393840D23C8D78B00B2615B /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		E5A9A66CEACE069E39321277 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				596BDDA2D8C04F382D8B5E69 /* Pods-ExchangesRates.debug.xcconfig */,
+				A0EF4318D6B85FB6529C3A40 /* Pods-ExchangesRates.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8393841523C8D78B00B2615B /* Build configuration list for PBXNativeTarget "ExchangesRates" */;
 			buildPhases = (
+				F1543140487B9E3915D9A99D /* [CP] Check Pods Manifest.lock */,
 				839383FD23C8D78900B2615B /* Sources */,
 				839383FE23C8D78900B2615B /* Frameworks */,
 				839383FF23C8D78900B2615B /* Resources */,
+				63155B8AB2879FC756738642 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,45 +232,71 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8393841123C8D78B00B2615B /* LaunchScreen.storyboard in Resources */,
 				8393840E23C8D78B00B2615B /* Assets.xcassets in Resources */,
-				8393840C23C8D78A00B2615B /* Main.storyboard in Resources */,
+				8393842123C8D95B00B2615B /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		63155B8AB2879FC756738642 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ExchangesRates/Pods-ExchangesRates-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ExchangesRates/Pods-ExchangesRates-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ExchangesRates/Pods-ExchangesRates-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1543140487B9E3915D9A99D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ExchangesRates-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		839383FD23C8D78900B2615B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8393840923C8D78A00B2615B /* ViewController.swift in Sources */,
+				8393840923C8D78A00B2615B /* DashboardController.swift in Sources */,
+				8386041E23C9189F0067186E /* RatesService.swift in Sources */,
 				8393840523C8D78900B2615B /* AppDelegate.swift in Sources */,
+				8326981C23C9D59D003D3078 /* Rate.swift in Sources */,
+				8326982423CA6B5C003D3078 /* RateCell.swift in Sources */,
+				8326981E23C9DE21003D3078 /* UIView.swift in Sources */,
 				8393840723C8D78A00B2615B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		8393840A23C8D78A00B2615B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8393840B23C8D78A00B2615B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8393840F23C8D78B00B2615B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8393841023C8D78B00B2615B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8393841323C8D78B00B2615B /* Debug */ = {
@@ -282,11 +415,12 @@
 		};
 		8393841623C8D78B00B2615B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 596BDDA2D8C04F382D8B5E69 /* Pods-ExchangesRates.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K4UL6WL48A;
-				INFOPLIST_FILE = ExchangesRates/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ExchangesRates/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -300,11 +434,12 @@
 		};
 		8393841723C8D78B00B2615B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0EF4318D6B85FB6529C3A40 /* Pods-ExchangesRates.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K4UL6WL48A;
-				INFOPLIST_FILE = ExchangesRates/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ExchangesRates/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
