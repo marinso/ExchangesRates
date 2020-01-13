@@ -10,6 +10,8 @@ import UIKit
 
 class RateDataCell: UITableViewCell {
     
+    // MARK: - Property
+    
     var rateData: RateData? {
         didSet {
             guard let no = rateData?.no else { return }
@@ -48,6 +50,8 @@ class RateDataCell: UITableViewCell {
         return label
     }()
 
+    // MARK: - Init
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
@@ -57,11 +61,8 @@ class RateDataCell: UITableViewCell {
         addSubview(noLabel)
         addSubview(dateLabel)
 
-
         dateLabel.anchor(top: topAnchor, bottom: bottomAnchor, left: leftAnchor, right: nil, paddingTop: 5, paddingBottom: 5, paddingLeft: 15, paddingRight: 15, width: 0, height: 0)
-
         noLabel.anchor(top: topAnchor, bottom: bottomAnchor, left: dateLabel.rightAnchor, right: midLabel.leftAnchor, paddingTop: 5, paddingBottom: 5, paddingLeft: 5, paddingRight: 5, width: 0, height: 0)
-
         midLabel.anchor(top: topAnchor, bottom: bottomAnchor, left: nil, right: rightAnchor, paddingTop: 5, paddingBottom: 5, paddingLeft: 15, paddingRight: 15, width: 0, height: 0)
     }
     

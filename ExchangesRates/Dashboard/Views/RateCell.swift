@@ -39,7 +39,7 @@ class RateCell: UITableViewCell {
     var currencyLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 9)
+        label.font = UIFont.systemFont(ofSize: 10)
         label.numberOfLines = 2
         label.textAlignment = .left
         return label
@@ -48,21 +48,21 @@ class RateCell: UITableViewCell {
     var codeLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(red: 255/255, green: 121/255, blue: 121/255, alpha: 1)
-        label.font = UIFont.boldSystemFont(ofSize: 13)
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
     
     var midLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(red: 104/255, green: 109/255, blue: 224/255, alpha: 1)
-        label.font = UIFont.boldSystemFont(ofSize: 13)
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
     
     var dateLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 8)
+        label.font = UIFont.systemFont(ofSize: 10)
         return label
     }()
     

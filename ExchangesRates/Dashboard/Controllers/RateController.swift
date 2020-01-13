@@ -28,7 +28,6 @@ class RateController: UIViewController {
     private var rateDataProvidier = MoyaProvider<RateDataService>()
     private var rateData = [ResponseRatesData]()
 
-
     private lazy var reloadButton: UIButton = {
         let btn = UIButton(type: .system)
         btn.setImage(UIImage(named: "reload"), for: .normal)
@@ -51,15 +50,21 @@ class RateController: UIViewController {
     }
     
     private func configureNavigation() {
+        configureNavigationTitle()
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(handleClose))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: reloadButton)
+        navigationController?.overrideUserInterfaceStyle = .dark
+    }
+    
+    private func configureNavigationTitle() {
         guard let name = self.currency else { return }
         let title = UILabel()
+        title.font = UIFont.boldSystemFont(ofSize: 13)
         title.text = name.uppercased()
         title.numberOfLines = 0
+        title.textAlignment = .center
         title.lineBreakMode = .byWordWrapping
-        title.font = UIFont.systemFont(ofSize: 13)
         navigationItem.titleView = title
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(handleClose))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: reloadButton)
     }
     
     // MARK: - Handlers
@@ -71,7 +76,7 @@ class RateController: UIViewController {
     @objc private func handleReload() {
         loadRateData()
     }
-    
+     
     @objc private func startDatePickerChanged() {
         startDate = startDatePickerCell.datePicker.date
     }
@@ -101,13 +106,12 @@ class RateController: UIViewController {
                     self.showError(with: error)
                 }
                 self.tableView.reloadData()
-            case .failure(let error):
-                print(error)
+            case .failure(_):
+                self.hideProgressHUD()
+                self.showConnectionLost()
             }
         }
     }
-    
-    
 }
 
     // MARK: - TableView
@@ -191,6 +195,7 @@ extension RateController: UITableViewDelegate, UITableViewDataSource {
         tableView.dataSource = self
         tableView.backgroundColor = .systemGray5
         tableView.tableFooterView = UIView()
+        
         view.addSubview(tableView)
         tableView.anchor(top: safeArea.topAnchor, bottom: safeArea.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 10, paddingBottom: 10, paddingLeft: 10, paddingRight: 10, width: 0, height: 0)
         

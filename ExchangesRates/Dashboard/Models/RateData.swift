@@ -33,7 +33,7 @@ struct RateData: Decodable {
     }
 
     var effectiveDateFormatted: String {
-        let dateformatter = DateFormatter()
+        let dateformatter       = DateFormatter()
         dateformatter.dateStyle = .medium
         dateformatter.timeStyle = .none
         return dateformatter.string(from: effectiveDate)
@@ -42,7 +42,7 @@ struct RateData: Decodable {
     var computedMid: Float? {
         guard let ask = self.ask else { return nil }
         guard let bid = self.bid else { return nil }
-        let mid = (ask + bid) / 2
+        let mid       = (ask + bid) / 2
         return mid
     }
 }

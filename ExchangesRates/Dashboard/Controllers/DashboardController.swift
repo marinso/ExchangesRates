@@ -88,7 +88,7 @@ class DashboardController: UIViewController {
        return stackView
     }()
     
-    // MARK: - Life cycle
+    // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -130,10 +130,16 @@ class DashboardController: UIViewController {
                 self.hideProgressHUD()
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .formatted(DateFormatter.yearMonthDay)
-                self.rates = try! decoder.decode([Response].self, from: response.data)
+                do {
+                    _ = try response.filterSuccessfulStatusCodes()
+                    self.rates = try! decoder.decode([Response].self, from: response.data)
+                } catch {
+                    self.showError(with: error)
+                }
                 self.tableView.reloadData()
-            case .failure(let error):
-                 print(error)
+            case .failure(_):
+                 self.hideProgressHUD()
+                 self.showConnectionLost()
             }
         }
     }

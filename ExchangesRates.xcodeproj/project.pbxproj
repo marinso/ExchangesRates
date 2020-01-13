@@ -11,8 +11,6 @@
 		8326981C23C9D59D003D3078 /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8326981B23C9D59D003D3078 /* Rate.swift */; };
 		8326981E23C9DE21003D3078 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8326981D23C9DE21003D3078 /* UIView+Extensions.swift */; };
 		8326982423CA6B5C003D3078 /* RateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8326982323CA6B5C003D3078 /* RateCell.swift */; };
-		8366204C23CC37B600043CD0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8366204B23CC37B600043CD0 /* ViewController.swift */; };
-		8366204E23CC381700043CD0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8366204D23CC381700043CD0 /* Default-568h@2x.png */; };
 		837BA9D223CB23DA004B7742 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837BA9D123CB23DA004B7742 /* UIViewController+Extensions.swift */; };
 		8386041E23C9189F0067186E /* RatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8386041D23C9189F0067186E /* RatesService.swift */; };
 		8393840523C8D78900B2615B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8393840423C8D78900B2615B /* AppDelegate.swift */; };
@@ -32,8 +30,6 @@
 		8326981B23C9D59D003D3078 /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
 		8326981D23C9DE21003D3078 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		8326982323CA6B5C003D3078 /* RateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCell.swift; sourceTree = "<group>"; };
-		8366204B23CC37B600043CD0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8366204D23CC381700043CD0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		837BA9D123CB23DA004B7742 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		8386041D23C9189F0067186E /* RatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesService.swift; sourceTree = "<group>"; };
 		8393840123C8D78900B2615B /* ExchangesRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangesRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,7 +79,6 @@
 		839383F823C8D78900B2615B = {
 			isa = PBXGroup;
 			children = (
-				8366204D23CC381700043CD0 /* Default-568h@2x.png */,
 				8393840323C8D78900B2615B /* ExchangesRates */,
 				8393840223C8D78900B2615B /* Products */,
 				E5A9A66CEACE069E39321277 /* Pods */,
@@ -115,7 +110,6 @@
 				8393840423C8D78900B2615B /* AppDelegate.swift */,
 				8393840623C8D78A00B2615B /* SceneDelegate.swift */,
 				8393841223C8D78B00B2615B /* Info.plist */,
-				8366204B23CC37B600043CD0 /* ViewController.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -254,7 +248,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8393840E23C8D78B00B2615B /* Assets.xcassets in Resources */,
-				8366204E23CC381700043CD0 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,7 +304,6 @@
 				8393840923C8D78A00B2615B /* DashboardController.swift in Sources */,
 				83AEA05523CB519500670E6C /* RateController.swift in Sources */,
 				8386041E23C9189F0067186E /* RatesService.swift in Sources */,
-				8366204C23CC37B600043CD0 /* ViewController.swift in Sources */,
 				8393840523C8D78900B2615B /* AppDelegate.swift in Sources */,
 				83AEA05B23CBAB5900670E6C /* RateDataCell.swift in Sources */,
 				8326981C23C9D59D003D3078 /* Rate.swift in Sources */,
