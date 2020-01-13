@@ -11,9 +11,9 @@ import Foundation
 struct Rate: Decodable {
     let currency: String
     let code:     String
-    let mid:      Float?
-    let ask:      Float?
-    let bid:      Float?
+    let mid:      Double?
+    let ask:      Double?
+    let bid:      Double?
     
     enum CodingKeys: String, CodingKey {
         case currency
@@ -27,12 +27,12 @@ struct Rate: Decodable {
         let container  = try decoder.container(keyedBy: CodingKeys.self)
         self.currency  = try container.decode(String.self, forKey: .currency)
         self.code      = try container.decode(String.self, forKey: .code)
-        self.mid       = try container.decodeIfPresent(Float.self,  forKey: .mid)
-        self.ask       = try container.decodeIfPresent(Float.self, forKey: .ask)
-        self.bid       = try container.decodeIfPresent(Float.self, forKey: .bid)
+        self.mid       = try container.decodeIfPresent(Double.self,  forKey: .mid)
+        self.ask       = try container.decodeIfPresent(Double.self, forKey: .ask)
+        self.bid       = try container.decodeIfPresent(Double.self, forKey: .bid)
     }
     
-    var computedMid: Float? {
+    var computedMid: Double? {
         guard let ask = self.ask else { return nil }
         guard let bid = self.bid else { return nil }
         let mid = (ask + bid) / 2

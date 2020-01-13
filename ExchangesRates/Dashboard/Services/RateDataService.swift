@@ -1,5 +1,5 @@
 //
-//  RateDateService.swift
+//  RateDataService.swift
 //  ExchangesRates
 //
 //  Created by Martin Nasierowski on 12/01/2020.
@@ -9,25 +9,25 @@
 import Foundation
 import Moya
 
-enum RateDateService {
-    case getRateDate(table: Character, code: String, startDate: String, endDate: String)
+enum RateDataService {
+    case getRateData(table: Character, code: String, startDate: String, endDate: String)
 }
 
-extension RateDateService: TargetType {
+extension RateDataService: TargetType {
     var baseURL: URL {
         return URL(string: "http://api.nbp.pl")!
     }
     
     var path: String {
         switch self {
-        case .getRateDate(let table, let code, let startDate, let endDate):
-            return "/exchangerates/rates/\(table)/\(code)/\(startDate)/\(endDate)/"
+        case .getRateData(let table, let code, let startDate, let endDate):
+            return "/api/exchangerates/rates/\(table)/\(code)/\(startDate)/\(endDate)/"
         }
     }
     
     var method: Moya.Method {
         switch self {
-         case .getRateDate(_,_,_,_):
+         case .getRateData(_,_,_,_):
             return .get
         }
     }
@@ -38,7 +38,7 @@ extension RateDateService: TargetType {
     
     var task: Task {
         switch self {
-        case .getRateDate(_,_,_,_):
+        case .getRateData(_,_,_,_):
             return .requestPlain
         }
     }

@@ -18,4 +18,11 @@ extension UIViewController {
     func hideProgressHUD() {
         MBProgressHUD.hide(for: self.view, animated: true)
     }
+    
+    func showError(with error :Error) {
+        let errorText = error.localizedDescription.replacingOccurrences(of: "Status", with: "")
+        let alert = UIAlertController(title: "Error", message: errorText.uppercased(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }

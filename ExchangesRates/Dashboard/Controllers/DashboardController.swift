@@ -205,7 +205,7 @@ extension DashboardController: UITableViewDelegate, UITableViewDataSource {
         tableView.register(RateCell.self, forCellReuseIdentifier: reuseIdentifier)
         
         view.addSubview(tableView)
-        tableView.anchor(top: selectTableStack.bottomAnchor, bottom: safeArea.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 10, paddingBottom: 10, paddingLeft: 10, paddingRight: 10, width: 0, height: 0)
+        tableView.anchor(top: selectTableStack.bottomAnchor, bottom: view.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 10, paddingBottom: 10, paddingLeft: 10, paddingRight: 10, width: 0, height: 0)
         tableView.register(RateCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.backgroundColor = .systemGray5
     }

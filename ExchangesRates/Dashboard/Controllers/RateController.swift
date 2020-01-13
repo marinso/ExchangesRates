@@ -25,8 +25,8 @@ class RateController: UIViewController {
     private var tableView = UITableView()
     private let startDatePickerCell = DatePickerCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
     private let endDatePickerCell = DatePickerCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: nil)
-    private var rateDateProvidier = MoyaProvider<RateDateService>()
-    private var rateData = [Response]()
+    private var rateDataProvidier = MoyaProvider<RateDataService>()
+    private var rateData = [ResponseRatesData]()
 
 
     private lazy var reloadButton: UIButton = {
@@ -52,8 +52,12 @@ class RateController: UIViewController {
     
     private func configureNavigation() {
         guard let name = self.currency else { return }
-        navigationItem.title = name.uppercased()
-        navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 11)]
+        let title = UILabel()
+        title.text = name.uppercased()
+        title.numberOfLines = 0
+        title.lineBreakMode = .byWordWrapping
+        title.font = UIFont.systemFont(ofSize: 13)
+        navigationItem.titleView = title
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(handleClose))
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: reloadButton)
     }
@@ -65,17 +69,15 @@ class RateController: UIViewController {
     }
     
     @objc private func handleReload() {
-        print("handle refresh")
+        loadRateData()
     }
     
-    @objc func startDatePickerChanged() {
+    @objc private func startDatePickerChanged() {
         startDate = startDatePickerCell.datePicker.date
-        loadRateData()
     }
     
-    @objc func endDatePickerChanged() {
+    @objc private func endDatePickerChanged() {
         endDate = endDatePickerCell.datePicker.date
-        loadRateData()
     }
     
     // MARK: - API
@@ -84,31 +86,28 @@ class RateController: UIViewController {
         let formatter = DateFormatter.yearMonthDay
         let startDateString = formatter.string(from: startDate)
         let endDateString = formatter.string(from: endDate)
-        
-        print(startDateString)
-    
+            
         showProgressHUD()
-        rateDateProvidier.request(.getRateDate(table: table!, code: code!, startDate: startDateString, endDate: endDateString)) { (result) in
+        rateDataProvidier.request(.getRateData(table: table!, code: code!, startDate: startDateString, endDate: endDateString)) { (result) in
             switch result {
             case .success(let response):
                 self.hideProgressHUD()
-                print(response)
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .formatted(DateFormatter.yearMonthDay)
                 do {
-                    let json = try JSONSerialization.jsonObject(with: response.data, options: [])
-                    print(json)
+                    _ = try response.filterSuccessfulStatusCodes()
+                    self.rateData = [try! decoder.decode(ResponseRatesData.self, from: response.data)]
                 } catch {
-                    print(error)
+                    self.showError(with: error)
                 }
-
-//                let decoder = JSONDecoder()
-//                decoder.dateDecodingStrategy = .formatted(DateFormatter.yearMonthDay)
-//                self.rateData = try! decoder.decode([Response].self, from: response.data)
-//                self.tableView.reloadData()
+                self.tableView.reloadData()
             case .failure(let error):
-                 print(error)
+                print(error)
             }
         }
     }
+    
+    
 }
 
     // MARK: - TableView
@@ -134,7 +133,13 @@ extension RateController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 { return 2 } else { return 5 }
+        if section == 0 { return 2 } else {
+            if rateData.count > 0 {
+                return rateData[0].rates.count
+            } else {
+                return 0
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -154,10 +159,12 @@ extension RateController: UITableViewDelegate, UITableViewDataSource {
             cell.datePicker.datePickerMode = .date
             cell.rightLabelTextColor = .white
             cell.tintColor = .black
+            cell.backgroundColor = .systemGray3
             return cell
             
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! RateDataCell
+            cell.rateData = rateData[0].rates[indexPath.row]
             return cell
         }
     }
@@ -179,16 +186,16 @@ extension RateController: UITableViewDelegate, UITableViewDataSource {
         return 2
     }
     
-    func setTableView() {
+    private func setTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .systemGray5
-        tableView.register(RateCell.self, forCellReuseIdentifier: reuseIdentifier)
-        
+        tableView.tableFooterView = UIView()
         view.addSubview(tableView)
-        tableView.anchor(top: view.topAnchor, bottom: safeArea.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 10, paddingBottom: 10, paddingLeft: 10, paddingRight: 10, width: 0, height: 0)
-        tableView.register(RateCell.self, forCellReuseIdentifier: reuseIdentifier)
+        tableView.anchor(top: safeArea.topAnchor, bottom: safeArea.bottomAnchor, left: view.leftAnchor, right: view.rightAnchor, paddingTop: 10, paddingBottom: 10, paddingLeft: 10, paddingRight: 10, width: 0, height: 0)
         
+        tableView.register(RateDataCell.self, forCellReuseIdentifier: reuseIdentifier)
+
         startDatePickerCell.datePicker.addTarget(self, action: #selector(startDatePickerChanged), for: .valueChanged)
         endDatePickerCell.datePicker.addTarget(self, action: #selector(endDatePickerChanged), for: .valueChanged)
     }

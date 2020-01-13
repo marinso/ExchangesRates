@@ -21,7 +21,7 @@ class RateCell: UITableViewCell {
                 midLabel.text = String(describing: mid)
             } else {
                 guard let mid = rate?.computedMid else { return }
-                midLabel.text = String(describing: mid)
+                midLabel.text = String(format: "%.6f", mid)
             }
             
             currencyLabel.text = breakLine(name: currency.uppercased())
