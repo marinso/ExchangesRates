@@ -44,9 +44,13 @@ class RateController: UIViewController {
         view.backgroundColor = .systemGray4
         safeArea = view.layoutMarginsGuide
         
-        
         configureNavigation()
         setTableView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        configureNavigationTitle()
     }
     
     private func configureNavigation() {
@@ -59,11 +63,12 @@ class RateController: UIViewController {
     private func configureNavigationTitle() {
         guard let name = self.currency else { return }
         let title = UILabel()
-        title.font = UIFont.boldSystemFont(ofSize: 13)
+        title.font = UIFont.boldSystemFont(ofSize: 15)
         title.text = name.uppercased()
         title.numberOfLines = 0
         title.textAlignment = .center
         title.lineBreakMode = .byWordWrapping
+        title.sizeToFit()
         navigationItem.titleView = title
     }
     
